@@ -19,11 +19,9 @@
     timestamp: uint 
   })
 
-(define-event product-registered 
-  (id uint, producer principal, name (string-ascii 100), description (string-ascii 250), location (string-ascii 100)))
+(define-event product-registered (id uint producer principal name (string-ascii 100) description (string-ascii 250) location (string-ascii 100)))
 
-(define-event product-updated 
-  (id uint, location (string-ascii 100), status (string-ascii 50)))
+(define-event product-updated (id uint location (string-ascii 100) status (string-ascii 50)))
 
 (define-public (register-product (name (string-ascii 100)) (description (string-ascii 250)) (location (string-ascii 100)))
   (let (
